@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('frontend.urls')),
     path('', include('home.urls')),
     path('', include('accounts.urls')),
+    path('inventario/', include('inventario.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch ./pruvitweb/frontend/src/index.js --output-path ./pruvitweb/frontend/static/frontend",
+    "dev": "webpack --mode development --watch",
     "build": "webpack --mode production ./pruvitweb/frontend/src/index.js --output-path ./pruvitweb/frontend/static/frontend"
   },
   "repository": {
