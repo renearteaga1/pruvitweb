@@ -17,6 +17,11 @@ function Form(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     props.addLead(lead);
+    setLead({
+      name: "",
+      email: "",
+      message: "",
+    });
     // console.log(lead);
   };
 
