@@ -52,7 +52,7 @@ function Form(props) {
         </div>
 
         <div className="form-group">
-          <label>Message</label>
+          <label>Messagsse</label>
           <input
             className="form-control"
             type="text"

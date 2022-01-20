@@ -1,16 +1,16 @@
 // module.exports = {
-//     module: {
-//         rules: [
-//             {
-//                 test: /\.js$/,
-//                 exclude: /node_modules/,
-//                 use: {
-//                     loader: "babel-loader"
-//                 }
-//             }
-//         ]
-//     }
-// }
+//   module: {
+//     rules: [
+//       {
+//         test: /\.js$/,
+//         exclude: /node_modules/,
+//         use: {
+//           loader: "babel-loader",
+//         },
+//       },
+//     ],
+//   },
+// };
 
 // const path = require("path");
 // const getFilesFromDir = require("./config/files");
@@ -39,26 +39,31 @@
 //     ]
 // }
 
+let path = require("path");
+let BundleTracker = require("webpack-bundle-tracker");
 
 module.exports = {
-
-    entry: {
-        index: './pruvitweb/frontend/src/index.js',
-        inventario: './pruvitweb/inventario/src/inventario.js'
-    },
-    output: {
-        filename: '[name]/[name].js',
-        path: __dirname + '/pruvitweb/templates/static/'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
-                }
-            }
-        ]
-    }
-}
+  entry: {
+    inventario: "./pruvitweb/inventario/src/inventario.js",
+    index: "./pruvitweb/frontend/src/index.js",
+  },
+  output: {
+    filename: "[name].js",
+    // chunkFilename: "[name]-[hash].js",
+    path: path.resolve(__dirname + "/pruvitweb/static/"),
+    // publicPath: "/static/",
+    clean: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+    ],
+  },
+  // plugins: [new BundleTracker({ filename: "./webpack-stats.json" })],
+};

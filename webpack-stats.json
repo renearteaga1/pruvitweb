@@ -1,0 +1,74 @@
+{
+  "status": "done",
+  "assets": {
+    "index-85a9dfbed2a4a8989845.js": {
+      "name": "index-85a9dfbed2a4a8989845.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/index-85a9dfbed2a4a8989845.js",
+      "publicPath": "/static/index-85a9dfbed2a4a8989845.js"
+    },
+    "inventario-85a9dfbed2a4a8989845.js": {
+      "name": "inventario-85a9dfbed2a4a8989845.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/inventario-85a9dfbed2a4a8989845.js",
+      "publicPath": "/static/inventario-85a9dfbed2a4a8989845.js"
+    },
+    "index-dbc48b78ee3e03a9ec5a.js": {
+      "name": "index-dbc48b78ee3e03a9ec5a.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/index-dbc48b78ee3e03a9ec5a.js",
+      "publicPath": "/static/index-dbc48b78ee3e03a9ec5a.js"
+    },
+    "inventario-dbc48b78ee3e03a9ec5a.js": {
+      "name": "inventario-dbc48b78ee3e03a9ec5a.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/inventario-dbc48b78ee3e03a9ec5a.js",
+      "publicPath": "/static/inventario-dbc48b78ee3e03a9ec5a.js"
+    },
+    "index-086c6af41cbe5f3c2d10.js": {
+      "name": "index-086c6af41cbe5f3c2d10.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/index-086c6af41cbe5f3c2d10.js",
+      "publicPath": "/static/index-086c6af41cbe5f3c2d10.js"
+    },
+    "inventario-086c6af41cbe5f3c2d10.js": {
+      "name": "inventario-086c6af41cbe5f3c2d10.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/inventario-086c6af41cbe5f3c2d10.js",
+      "publicPath": "/static/inventario-086c6af41cbe5f3c2d10.js"
+    },
+    "index-7d36dff643709c76fb4d.js": {
+      "name": "index-7d36dff643709c76fb4d.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/index-7d36dff643709c76fb4d.js",
+      "publicPath": "/static/index-7d36dff643709c76fb4d.js"
+    },
+    "inventario-7d36dff643709c76fb4d.js": {
+      "name": "inventario-7d36dff643709c76fb4d.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/inventario-7d36dff643709c76fb4d.js",
+      "publicPath": "/static/inventario-7d36dff643709c76fb4d.js"
+    },
+    "index-f72720a1ad2dfdc8ec30.js": {
+      "name": "index-f72720a1ad2dfdc8ec30.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/index-f72720a1ad2dfdc8ec30.js",
+      "publicPath": "/static/index-f72720a1ad2dfdc8ec30.js"
+    },
+    "inventario-f72720a1ad2dfdc8ec30.js": {
+      "name": "inventario-f72720a1ad2dfdc8ec30.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/inventario-f72720a1ad2dfdc8ec30.js",
+      "publicPath": "/static/inventario-f72720a1ad2dfdc8ec30.js"
+    },
+    "index-6bb76c50a67bca8947bd.js": {
+      "name": "index-6bb76c50a67bca8947bd.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/index-6bb76c50a67bca8947bd.js",
+      "publicPath": "/static/index-6bb76c50a67bca8947bd.js"
+    },
+    "inventario-6bb76c50a67bca8947bd.js": {
+      "name": "inventario-6bb76c50a67bca8947bd.js",
+      "path": "/Users/rene/Documents/pepa/pruvit/pruvitweb/static/inventario-6bb76c50a67bca8947bd.js",
+      "publicPath": "/static/inventario-6bb76c50a67bca8947bd.js"
+    }
+  },
+  "chunks": {
+    "index": [
+      "index-086c6af41cbe5f3c2d10.js"
+    ],
+    "inventario": [
+      "inventario-086c6af41cbe5f3c2d10.js"
+    ]
+  },
+  "publicPath": "/static/"
+}
