@@ -19,11 +19,12 @@ class Precio(models.Model):
         Producto, related_name='precio', on_delete=models.CASCADE)
     precio = models.DecimalField(max_digits=5, decimal_places=2)
     precio_anterior = models.DecimalField(
-        max_digits=5, decimal_places=2, blank=True)
-    iva = models.DecimalField(max_digits=3, decimal_places=2, blank=True)
+        max_digits=5, decimal_places=2, blank=True, null=True)
+    iva = models.DecimalField(
+        max_digits=3, decimal_places=2, blank=True, null=True)
 
     def __str__(self):
-        return self.producto
+        return self.producto.nombre
 
 
 class Inventario(models.Model):
@@ -31,7 +32,7 @@ class Inventario(models.Model):
     cantidad = models.DecimalField(max_digits=9, decimal_places=2)
 
     def __str__(self):
-        return self.producto
+        return self.producto.nombre
 
 
 class Proveedor(models.Model):
@@ -52,4 +53,4 @@ class Ingreso(models.Model):
     precio = models.ForeignKey(Precio, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.producto
+        return self.producto.nombre

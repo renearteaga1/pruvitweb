@@ -48,10 +48,10 @@ module.exports = {
     index: "./pruvitweb/frontend/src/index.js",
   },
   output: {
-    filename: "[name].js",
+    filename: "[name]-[hash].js",
     // chunkFilename: "[name]-[hash].js",
     path: path.resolve(__dirname + "/pruvitweb/static/"),
-    // publicPath: "/static/",
+    publicPath: "/static/",
     clean: true,
   },
   module: {
@@ -65,5 +65,5 @@ module.exports = {
       },
     ],
   },
-  // plugins: [new BundleTracker({ filename: "./webpack-stats.json" })],
+  plugins: [new BundleTracker({ filename: "./webpack-stats.json" })],
 };

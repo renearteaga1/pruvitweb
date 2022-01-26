@@ -13,9 +13,7 @@ const Form = (props) => {
     nombre: "",
     codigo: "",
     observacion: "",
-    precio: [{
-      precio: ""
-    }]
+    precio: []
   });
 
   const handleChange = (e) => {
@@ -30,7 +28,7 @@ const Form = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addProducto(producto));
+    // dispatch(addProducto(producto));
     setPrecio({ precio: [] });
     setProducto({
       nombre: "",
@@ -53,7 +51,7 @@ const Form = (props) => {
             type="text"
             name="nombre"
             onChange={handleChange}
-            value={producto.nombre}
+            value={producto.name}
           />
         </div>
 
@@ -64,7 +62,7 @@ const Form = (props) => {
             type="text"
             name="codigo"
             onChange={handleChange}
-            value={producto.codigo}
+            value={producto.email}
           />
         </div>
 
@@ -75,7 +73,7 @@ const Form = (props) => {
             type="text"
             name="observacion"
             onChange={handleChange}
-            value={producto.observacion}
+            value={producto.message}
           />
         </div>
 
@@ -86,7 +84,7 @@ const Form = (props) => {
             type="number"
             name="precio"
             onChange={handleChange}
-            value={producto.precio[0].precio}
+            value={producto.precio.precio}
           />
         </div>
 
@@ -95,6 +93,7 @@ const Form = (props) => {
             Guardar
           </button>
         </div>
+        <div>{producto.nombre}</div>
       </form>
     </div>
   );
