@@ -6,6 +6,7 @@ export const getProductos = () => (dispatch) => {
   axios
     .get("/inventario/api/producto/")
     .then((res) => {
+      // console.log(res.data)
       dispatch({
         type: GET_PRODUCTOS,
         payload: res.data,
