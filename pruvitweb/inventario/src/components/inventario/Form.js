@@ -65,7 +65,7 @@ const Form = (props) => {
     productos.map((prod, index) => {
       console.log(prod)
       // setCodigos([{ 'label': prod.codigo, 'id': prod.id }])
-      data.push({ label: prod.codigo, id: prod.id })
+      data.push({ label: prod.codigo, id: prod.id, nombre: prod.nombre, precio: prod.precio[0] })
     })
     setCodigos(data)
 
@@ -76,23 +76,38 @@ const Form = (props) => {
     console.log('codigos', codigos);
   }, [codigos])
 
-  const top100Films = [
-    { label: 'The Godfather', id: 1 },
-    { label: 'Pulp Fiction', id: 2 },
-  ];
+  const [productoSelected, setProductoSelected] = React.useState('')
+
+  const autoFill = (produ) => {
+
+    //   console.log('precioo', precio)
+    let precio
+    if (produ.precio == undefined) { precio = '' } else { precio = produ.precio.precio }
+    console.log('precio', precio)
+    setProducto({
+      nombre: produ.nombre,
+      codigo: produ.label,
+      observacion: "",
+      precio: [{
+        precio: precio
+      }],
+    });
+  }
 
   return (
     <div className="card card-body mt-4 mb-4">
       <h1>Add Producto Form</h1>
+
       <Autocomplete
         disablePortal
+        // value={value}
         id="combo-box-demo"
         options={codigos}
         sx={{ width: 300 }}
         clearOnEscape={true}
         freeSolo={true}
         autoHighlight={true}
-
+        onChange={(event, newValue) => { newValue == null ? setProductoSelected('') : autoFill(newValue) }}
         // onInputChange={handleChangeAuto}
         renderInput={(params) => <TextField {...params} label="Codigo" />}
       />
@@ -128,6 +143,18 @@ const Form = (props) => {
             name="observacion"
             onChange={handleChange}
             value={producto.observacion}
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Precio Anterior</label>
+          <input
+            disabled
+            className="form-control"
+            type="number"
+            name="precio"
+            onChange={handleChange}
+            value={producto.precio[0].precio}
           />
         </div>
 
