@@ -6,13 +6,10 @@ import {
   updateProducto,
   filterProductos,
 } from "../../actions/productos";
-
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 
-import Producto from "./Producto";
-
-const Form = (props) => {
+const Producto = (props) => {
   const productos = useSelector((state) => state.productos.productos);
   const dispatch = useDispatch();
 
@@ -158,6 +155,8 @@ const Form = (props) => {
     });
   };
 
+  //   const [rowNum, setRowNum] = React.useState(1);
+
   return (
     <div className="card card-body mt-4 mb-4">
       <h1>Add Producto Form</h1>
@@ -193,7 +192,37 @@ const Form = (props) => {
       {/* {codigos.map(cod => <div>{cod.id}</div>)} */}
       <form onSubmit={handleSubmit}>
         <div className="row">
-          <div className="col-md-4 m-2 p-1 border rounded">
+          <div className="col">
+            <Autocomplete
+              disablePortal
+              // value={value}
+              id="codigo-row-0"
+              options={codigos}
+              sx={{ width: 300 }}
+              clearOnEscape={true}
+              freeSolo={true}
+              autoHighlight={true}
+              onChange={(event, newValue) => {
+                newValue == null ? setProductoSelected("") : autoFill(newValue);
+              }}
+              // className="form-control"
+              onInputChange={handleChangeAuto}
+              // renderInput={(params) => <TextField {...params} label="Codigo" />}
+
+              renderInput={(params) => (
+                <div ref={params.InputProps.ref}>
+                  <label>Codigo</label>
+                  <input
+                    type="text"
+                    // name="codigo"
+                    {...params.inputProps}
+                    className="form-control"
+                  />
+                </div>
+              )}
+            />
+          </div>
+          <div className="col">
             <div className="form-group">
               <label>Name</label>
               <input
@@ -204,54 +233,20 @@ const Form = (props) => {
                 value={producto.nombre}
               />
             </div>
-
-            <div className="form-group">
-              <label>Codigo</label>
-              <input
-                className="form-control"
-                type="text"
-                name="codigo"
-                onChange={handleChange}
-                value={producto.codigo}
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Observacion</label>
-              <input
-                className="form-control"
-                type="text"
-                name="observacion"
-                onChange={handleChange}
-                value={producto.observacion}
-              />
-            </div>
           </div>
-          <div className="col-md-2 m-2 p-1 border rounded">
+          <div className="col">
             <div className="form-group">
-              <label>Precio Anterior</label>
-              <input
-                disabled
-                className="form-control"
-                type="number"
-                name="precio"
-                onChange={handleChange}
-                value={producto.precio.slice(-1)[0].precio}
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Precio</label>
+              <label>Costo</label>
               <input
                 className="form-control"
                 type="number"
-                name="precio"
+                name="costo"
                 onChange={handleChange}
-                value={producto.precio.slice(-1)[0].precio}
+                value={producto.costo}
               />
             </div>
           </div>
-          <div className="col-md-2 m-2 p-1 border rounded">
+          <div className="col">
             <div className="form-group">
               <label>Cantidad</label>
               <input
@@ -263,6 +258,32 @@ const Form = (props) => {
               />
             </div>
           </div>
+          <div className="col">
+            <div className="form-group">
+              <label>Precio</label>
+              <input
+                className="form-control"
+                type="number"
+                name="precio"
+                onChange={handleChange}
+                value={producto.precio.slice(-1)[0].precio}
+              />
+            </div>
+          </div>
+          <div className="col">
+            <div className="col-md-4 m-2 p-1 border rounded">
+              <div className="form-group">
+                <label>Observacion</label>
+                <input
+                  className="form-control"
+                  type="text"
+                  name="observacion"
+                  onChange={handleChange}
+                  value={producto.observacion}
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="form-group mt-3">
@@ -271,9 +292,8 @@ const Form = (props) => {
           </button>
         </div>
       </form>
-      <Producto />
     </div>
   );
 };
 
-export default Form;
+export default Producto;

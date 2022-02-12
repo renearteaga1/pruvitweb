@@ -28,7 +28,8 @@ class Precio(models.Model):
 
 
 class Inventario(models.Model):
-    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    producto = models.ForeignKey(
+        Producto, related_name='cantidad', on_delete=models.CASCADE)
     cantidad = models.DecimalField(max_digits=9, decimal_places=2)
 
     def __str__(self):
